@@ -1,0 +1,27 @@
+<label for="{{ labelInput().valueLabel }}">
+    <span
+    [ngClass]="{
+        'span': true,
+        'content-input': onChangeValue.trim() !== '' &&
+            !labelInput().formControl.invalid && 
+            labelInput().formControl.touched,
+        'invalid': labelInput().formControl.invalid &&
+        labelInput().formControl.touched
+      }"
+    >{{ labelInput().valueSpan }}</span>
+    <input 
+        [ngClass]="{
+            'inputFocus': true, 
+            'input': onChangeValue.trim() !== '' &&
+            !labelInput().formControl.invalid &&
+            labelInput().formControl.touched,
+            'invalidInput': labelInput().formControl.invalid &&
+            labelInput().formControl.touched
+        }"
+        type="{{ labelInput().typeInput }}" 
+        name="{{ labelInput().nameInput }}" 
+        id="{{ labelInput().idInput }}"
+        [formControl]="labelInput().formControl"
+        (input)="onChangeInput($event)"
+    >
+</label>

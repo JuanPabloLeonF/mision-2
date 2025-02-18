@@ -1,0 +1,12 @@
+:host {
+    display: contents;
+}
+
+p {
+    font-size: calc(0.8rem + 0.1vw);
+}
+
+strong {
+    color: var(--color-primary);
+    cursor: pointer;
+}

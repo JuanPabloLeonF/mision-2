@@ -1,0 +1,12 @@
+<form (submit)="onSubmit($event)">
+    <h2>iniciar sesion</h2>
+    <app-label-input [labelInput]="labelInputEmail"/>
+    <app-label-input [labelInput]="labelInputPassword"/>
+    <div>
+        <app-pstrong [pStrongInput]="pStrongLoginSavePassword"/>
+    </div>
+    <app-buttom [buttonInput]="buttonInput"/>
+    <div>
+        <app-pstrong [pStrongInput]="pStrongLoginRegister"/>
+    </div>
+</form>
