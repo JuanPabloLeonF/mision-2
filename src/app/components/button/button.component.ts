@@ -1,5 +1,6 @@
 import { Component, input, InputSignal} from '@angular/core';
-import { ButtonInterface, buttonInit } from './typeButton';
+import { buttonInit } from '../formulary/dataFormulary';
+import { ButtonInterface } from './typeButton';
 
 @Component({
   selector: 'app-buttom',

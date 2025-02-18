@@ -5,15 +5,3 @@ export interface ButtonInterface {
     typeButton: string;
     clickEvent:  EventEmitter<void>
 }
-
-export const buttonInit: ButtonInterface = {
-    valueButton: "",
-    typeButton: "",
-    clickEvent: new EventEmitter<void>()
-}
-
-export const buttonLogin: ButtonInterface = {
-    valueButton: "iniciar sesion",
-    typeButton: "submit",
-    clickEvent: new EventEmitter<void>()
-}

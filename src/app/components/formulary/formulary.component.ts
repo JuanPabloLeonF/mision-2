@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, input, InputSignal } from '@angular/core';
 import { ButtomComponent } from '../button/button.component';
 import { LabelInputComponent } from './label-input/label-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ButtonInterface, buttonLogin } from '../button/typeButton';
+import { ButtonInterface } from '../button/typeButton';
 import { PstrongComponent } from '../pstrong/pstrong.component';
-import { PstrongInterface, pStrongLoginRegister, pStrongLoginSavePassword } from '../pstrong/dataPstrong';
-import { labelInitEmailClass, labelInitPasswordClass } from './dataFormulary';
+import { buttonLogin, formularyInit, labelInitEmailClass, labelInitPasswordClass, pStrongLoginRegister, pStrongLoginSavePassword } from './dataFormulary';
 import { LabelInputInterface } from './label-input/typeLabelInput';
+import { PstrongInterface } from '../pstrong/typePstrong';
+import { FormularyInterface } from './typeFormulary';
 
 @Component({
   selector: 'app-formulary',
@@ -21,24 +22,19 @@ import { LabelInputInterface } from './label-input/typeLabelInput';
 })
 export class FormularyComponent {
 
-  public buttonInput: ButtonInterface = buttonLogin;
-  public labelInputEmail: LabelInputInterface = labelInitEmailClass;
-  public labelInputPassword: LabelInputInterface = labelInitPasswordClass;
-  public pStrongLoginSavePassword: PstrongInterface = pStrongLoginSavePassword;
-  public pStrongLoginRegister: PstrongInterface = pStrongLoginRegister;
+  public formularyInput: InputSignal<FormularyInterface> = input<FormularyInterface>(formularyInit)
+
+  public buttonInput: ButtonInterface = this.formularyInput().inputs.find(input => input === buttonLogin) as ButtonInterface;
+  public labelInputEmail: LabelInputInterface = this.formularyInput().inputs.find(input => input === labelInitEmailClass) as LabelInputInterface;
+  public labelInputPassword: LabelInputInterface = this.formularyInput().inputs.find(input => input === labelInitPasswordClass) as LabelInputInterface;
+  public pStrongLoginSavePassword: PstrongInterface = this.formularyInput().inputs.find(input => input === pStrongLoginSavePassword) as PstrongInterface;
+  public pStrongLoginRegister: PstrongInterface = this.formularyInput().inputs.find(input => input === pStrongLoginRegister) as PstrongInterface;
 
   public onSubmit(event: any) {
-      event.preventDefault();
+    this.formularyInput().onSubmit(event, this.labelInputEmail, this.labelInputPassword);
+  }
 
-      if (this.labelInputEmail.formControl.valid && this.labelInputPassword.formControl.valid) {
-        alert("Formulario válido: " + JSON.stringify({
-          email: this.labelInputEmail.formControl.value,
-          password: this.labelInputPassword.formControl.value
-        }));
-        this.labelInputEmail.formControl.reset();
-        this.labelInputPassword.formControl.reset();
-      } else {
-        alert("Formulario inválido");
-      }
+  private getInputsOfFormularyInputs(): void {
+    this.buttonInput = this.formularyInput().inputs.find(input => input === buttonLogin) as ButtonInterface;
   }
 }

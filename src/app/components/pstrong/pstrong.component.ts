@@ -1,5 +1,6 @@
 import { Component, InputSignal, input } from '@angular/core';
-import { PstrongInterface, pstrongInit } from './dataPstrong';
+import { pstrongInit } from '../formulary/dataFormulary';
+import { PstrongInterface } from './typePstrong';
 
 @Component({
   selector: 'app-pstrong',
