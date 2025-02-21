@@ -1,0 +1,21 @@
+:host {
+    display: contents;
+}
+
+.container-img-close {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+}
+
+.container-img-close img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

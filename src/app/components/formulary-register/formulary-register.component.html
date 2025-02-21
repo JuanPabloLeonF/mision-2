@@ -1,0 +1,9 @@
+<form (submit)="onSubmit($event)">
+    <app-div-container-svg [divContainerSvgInput]="divContainerSvgInput" (click)="onBack()"/>
+    <h2>Recuperar Contraseña</h2>
+    <app-label-input [labelInput]="labelEmailInput"/>
+    <app-label-input [labelInput]="labelNameInput"/>
+    <app-label-input [labelInput]="labelIdentificationInput"/>
+    <app-label-input [labelInput]="labelPasswordInput"/>
+    <app-buttom [buttonInput]="buttonInput"/>
+</form>

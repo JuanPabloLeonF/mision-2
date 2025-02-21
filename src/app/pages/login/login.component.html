@@ -1,4 +1,16 @@
 <main>
     <div class="container-mask"></div>
-    <app-formulary />
+    @defer (on viewport) {
+        @if (inputLogin.isActivateLogin) {
+            <app-formulary-login (onSectionActivate)="getSectionActivate($event)" />
+        } @else if (inputLogin.isActivateRegister) {
+            <app-formulary-register (onSectionActivate)="getSectionActivate($event)" />
+        } @else if (inputLogin.isActivateSavePassword) {
+            <app-formulary-save-password (onSectionActivate)="getSectionActivate($event)" />
+        }
+    } @placeholder {
+        <p>login works!</p>
+    } @loading {
+        <p>Cargando...</p>
+    }
 </main>
