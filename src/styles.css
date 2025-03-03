@@ -7,12 +7,14 @@
   --font-size: 16px;
   --max-width: 1024px;
   --box-shadow: 0 0 1.5rem var(--color-primary);
-  --height-header: 4rem;
+  --height-header: 4.5rem;
   --font-family: 'Roboto', sans-serif;
   --text-color: #000000;
   --filter-blur-bg: blur(9px);
   --color-bg-trasparent: rgba(192, 192, 192, 0.5);
   --color-invalid: rgb(148, 35, 35);
+  --bg-transparent-search: rgba(107, 107, 107, 0.288);
+  --box-shadow-search: 0 0 0.5rem var(--color-primary);
 }
 
 /* reset */
@@ -41,6 +43,7 @@ body {
   color: var(--text-color);
   position: relative;
   width: 100vw;
+  background-color: var(--color-black);
 }
 
 a {

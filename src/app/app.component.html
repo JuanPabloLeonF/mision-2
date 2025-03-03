@@ -1,4 +1,4 @@
-@defer (when loginIsActive) {
-    <header>nav menu</header>
+@if (loginIsActive) {
+    <app-header />
 }
 <router-outlet />

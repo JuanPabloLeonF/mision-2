@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormularyLoginComponent } from '../../components/formularyLogin/formularyLogin.component';
 import { LoginInit, TypeLogin } from './typeLogin';
 import { FormularySavePasswordComponent } from '../../components/formulary-save-password/formulary-save-password.component';

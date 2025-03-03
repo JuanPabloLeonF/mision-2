@@ -3,17 +3,17 @@ import { authenticationGuard } from './guards/authentication.guard';
 
 export const routes: Routes = [
     {
-        path: "**",
-        redirectTo: "login/",
-        pathMatch: "full"
-    },
-    {
-        path: "login/",
+        path: "login",
         loadComponent: () => import("./pages/login/login.component").then(c => c.LoginComponent),
     },
     {
-        path: "movies/",
+        path: "movies",
         loadComponent: () => import("./pages/movies/movies.component").then(c => c.MoviesComponent),
         canActivate: [authenticationGuard]
-    }
+    },
+    {
+        path: "**",
+        redirectTo: "movies",
+        pathMatch: "full"
+    },
 ];

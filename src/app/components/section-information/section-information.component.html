@@ -1,0 +1,10 @@
+<section>
+    <h2>{{ sectionInformationInput().title }}</h2>
+    <p>
+        {{ sectionInformationInput().description }}
+    </p>
+    <div>
+        <app-div-container-ranking [rankingInput]="sectionInformationInput().ranking" />
+    </div>
+    <app-input-search />
+</section>

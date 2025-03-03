@@ -1,0 +1,32 @@
+:host {
+    display: contents;
+}
+
+section {
+    width: 90%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 2rem;
+    color: var(--color-white);
+    z-index: 1;
+    position: relative;
+}
+
+section h2 {
+    margin: 0;
+    padding: 0;
+    font-size: calc(4rem - 1vw);
+    text-transform: uppercase;
+    width: 45%;
+    text-shadow: 0 0 1rem var(--color-primary);
+}
+
+section p {
+    width: 45%;
+    height: auto;
+    text-align: left;
+    line-height: 1.5;
+}

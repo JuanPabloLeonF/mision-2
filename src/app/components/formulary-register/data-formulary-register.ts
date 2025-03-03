@@ -60,5 +60,12 @@ export const buttonSubmitRegister: ButtonInterface = {
 
 export const divContainerSvgRegister: TypeDivContainerSvg = {
     altValue: "cerrar",
-    imgUrl: "/close.svg"
+    imgUrl: "/close.svg",
+    stylePersonalized: {
+        position: "absolute",
+        width: "1.5rem",
+        height: "1.5rem",
+        top: "5%",
+        right: "5%"
+    }
 }

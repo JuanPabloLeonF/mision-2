@@ -1,0 +1,111 @@
+:host {
+    display: contents;
+}
+
+article {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: start;
+}
+
+.container-list-items {
+    width: 70%;
+    height: auto;        
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+}
+
+.container-search {
+    width: 100%;
+    height: auto;
+    min-height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-search input {
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 2rem;
+    text-transform: uppercase;
+    background-color: var(--bg-transparent-search);
+    backdrop-filter: var(--filter-blur-bg);
+    padding-left: 0.5rem;
+    color: var(--color-white);
+}
+
+.container-search input::placeholder {
+    color: var(--color-white);
+}
+
+.container-search input:focus {
+    box-shadow: var(--box-shadow-search);
+}
+
+.container-item {
+    background-color: var(--bg-transparent-search);
+    backdrop-filter: var(--filter-blur-bg);
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    padding: 0.3rem;
+    cursor:pointer;
+}
+
+.container-item:hover {
+    box-shadow: var(--box-shadow-search);
+}
+
+.container-item .container-img {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-item .container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.container-information {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 0.5rem;
+}
+
+.container-information p:nth-child(1) {
+  width: 100%;
+  height: 75%;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-align: left;
+}
+
+.container-information p:nth-child(2) {
+    width: 100%;
+    height: 25%;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+  }

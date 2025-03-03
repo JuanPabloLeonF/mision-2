@@ -7,12 +7,20 @@ import { TypeDivContainerSvg } from "../div-container-svg/type-div-container-svg
 
 export const divContainerSvgFormularySavePassword: TypeDivContainerSvg = {
     altValue: "cerrar",
-    imgUrl: "/close.svg"
+    imgUrl: "/close.svg",
+    stylePersonalized: {
+        position: "absolute",
+        width: "1.5rem",
+        height: "1.5rem",
+        top: "5%",
+        right: "5%"
+    }
 }
 
 export const divContainerSvgFormularyInit: TypeDivContainerSvg = {
     altValue: "",
-    imgUrl: ""
+    imgUrl: "",
+    stylePersonalized: {}
 }
 
 export const buttonPassword: ButtonInterface = {

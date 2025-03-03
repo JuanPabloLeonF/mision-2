@@ -12,7 +12,7 @@ export const authenticationGuard: CanActivateFn = (route: ActivatedRouteSnapshot
   if (authentication.isAdmin) {
     return true;
   } else {
-    routers.navigate(['/login']);
+    routers.navigate(['login']);
     return false;
   }
 

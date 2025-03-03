@@ -1,4 +1,4 @@
-import { Component, OnInit, output, OutputEmitterRef } from '@angular/core';
+import { Component, inject, OnInit, output, OutputEmitterRef } from '@angular/core';
 import { ButtomComponent } from '../button/button.component';
 import { LabelInputComponent } from '../label-input/label-input.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -7,6 +7,7 @@ import { PstrongComponent } from '../pstrong/pstrong.component';
 import { buttonLogin, labelInitEmailClass, labelInitPasswordClass, pStrongLoginRegister, pStrongLoginSavePassword } from './dataFormulary';
 import { LabelInputInterface } from '../label-input/typeLabelInput';
 import { PstrongInterface } from '../pstrong/typePstrong';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulary-login',
@@ -27,6 +28,8 @@ export class FormularyLoginComponent implements OnInit {
   public pStrongLoginSavePassword: PstrongInterface = pStrongLoginSavePassword;
   public pStrongLoginRegister: PstrongInterface = pStrongLoginRegister;
   public onSectionActivate: OutputEmitterRef<string> = output<string>();
+  public routers: Router = inject(Router);
+
 
 
   ngOnInit(): void {
@@ -52,6 +55,7 @@ export class FormularyLoginComponent implements OnInit {
       }));
       this.labelInputEmail.formControl.reset();
       this.labelInputPassword.formControl.reset();
+      this.routers.navigate(['movies']);
     } else {
       alert("Formulario inválido");
     }
