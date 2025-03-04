@@ -5,5 +5,7 @@ export const inpurSectionInformationInit: TypeSectionInformation = {
     description: "",
     ranking: "",
     urlVideo: "",
-    urlImg: ""
+    urlImg: "",
+    category: [],
+    id:""
 }

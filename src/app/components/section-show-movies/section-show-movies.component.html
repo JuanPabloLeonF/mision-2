@@ -1,0 +1,20 @@
+<section>
+    <h4>{{categorySelectedInput()}}</h4>
+    <div #containerMovies class="container-list-items-movies">
+        @for (movie of listMovies; track movie.id) {
+            <div class="container-item-movies" (click)="getMovieByOnClick(movie.id)">
+                <img src={{movie.urlImg}} alt={{movie.title}}>
+            </div>
+        }
+    </div>
+    @if (listMovies.length > 6) {
+        <div class="container-button-traslate">
+            <button type="button" (click)="onTraslateLeft()">
+                <img src="arrow.svg" alt="izquierda">
+            </button>
+            <button type="button" (click)="onTraslateRight()">
+                <img src="arrow.svg" alt="derecha">
+            </button>
+        </div>
+    }
+</section>

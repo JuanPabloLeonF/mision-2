@@ -16,6 +16,11 @@ export class MoviesService {
     return of(listMovies);
   }
 
+  public getById(id: string): Observable<TypeSectionInformation> {
+    //return this._httpClient.get<TypeSectionInformation[]>('http://localhost:3000/movies');
+    return of(listMovies.find(movie => movie.id === id)!);
+  }
+
   public getFirstMovie(): Observable<TypeSectionInformation> {
     //return this._httpClient.get<TypeSectionInformation[]>('http://localhost:3000/movies');
     return of(listMovies[0]);

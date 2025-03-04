@@ -5,7 +5,7 @@
     </p>
     <div>
         <app-div-container-ranking [rankingInput]="moviesInput().ranking" />
-        <app-div-container-show-file />
+        <app-div-container-show-file [movieSelectInput]="moviesInput()" />
     </div>
     <app-input-search [listMoviesInput]="sectionInformationInput()" />
 </section>

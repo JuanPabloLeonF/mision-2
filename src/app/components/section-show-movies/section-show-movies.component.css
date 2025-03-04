@@ -1,0 +1,95 @@
+:host {
+    display: contents;
+}
+
+section {
+    background-color: var(--color-black);
+    width: 100%;
+    height: 25rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+section h4 {
+    position: absolute;
+    top: 5%;
+    left: 1.2%;
+    font-size: 2rem;
+    text-shadow: 0 0 1rem var(--color-primary);
+    text-transform: uppercase;
+    color: var(--color-white);
+}
+
+.container-list-items-movies {
+    width: 100vw;
+    height: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    gap: 4.2rem;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    white-space: nowrap; 
+    scroll-snap-type: x mandatory;
+    padding: 1rem 2rem 0 1.5rem;
+}
+
+.container-item-movies {
+    width: 10rem;
+    height: 75%;
+    cursor: pointer;
+    transition: all 0.8s ease-in-out;
+    flex-shrink: 0;
+}
+
+.container-item-movies:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 0 1rem var(--color-primary);
+}
+
+.container-item-movies img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-button-traslate {
+    position: absolute;
+    bottom: 1%;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+    height: 4rem;
+    cursor: pointer;
+}
+
+.container-button-traslate button {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-white);
+    border: none;
+    outline: none;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.container-button-traslate button:nth-child(1) {
+    rotate: 180deg;
+}
+
+.container-button-traslate button img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    filter: invert(1);
+}

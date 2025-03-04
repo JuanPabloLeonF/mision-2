@@ -2,4 +2,12 @@
     <div class="container-mask"></div>
     <video src={{moviesSelect.urlVideo}} loop></video>
     <app-section-information [sectionInformationInput]="sectionInformation" [moviesInput]="moviesSelect" />
+    <div class="container-mask-bottom"></div>
 </main>
+@defer(on viewport) {
+    @for (category of listCategories; track $index) {
+        <app-section-show-movies [listMoviesInput]="sectionInformation" [categorySelectedInput]="category" />
+    }
+} @placeholder {
+  <section>Cargando...</section>
+}

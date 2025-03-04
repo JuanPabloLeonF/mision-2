@@ -4,8 +4,8 @@
             <input (input)="onChangeInput($event)" type="text" placeholder="Buscar...">
         </div>
         @defer (when listMoviesShow.length > 0) {
-            @for (movie of listMoviesShow; track movie.title) {
-                <div class="container-item">
+            @for (movie of listMoviesShow; track movie.id) {
+                <div class="container-item" (click)="getMovieByOnClick(movie.id)">
                     <div class="container-img">
                         <img src={{movie.urlImg}} alt={{movie.title}}>
                     </div>

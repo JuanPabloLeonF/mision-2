@@ -9,6 +9,21 @@ export const routes: Routes = [
     {
         path: "movies",
         loadComponent: () => import("./pages/movies/movies.component").then(c => c.MoviesComponent),
+        canActivate: [authenticationGuard],
+    },
+    {
+        path: "movies/:id",
+        loadComponent: () => import("./pages/movies/movies.component").then(c => c.MoviesComponent),
+        canActivate: [authenticationGuard]
+    },
+    {
+        path: "watchMovie",
+        loadComponent: () => import("./pages/watch-movie/watch-movie.component").then(c => c.WatchMovieComponent),
+        canActivate: [authenticationGuard]
+    },
+    {
+        path: "watchMovie/:id",
+        loadComponent: () => import("./pages/watch-movie/watch-movie.component").then(c => c.WatchMovieComponent),
         canActivate: [authenticationGuard]
     },
     {
