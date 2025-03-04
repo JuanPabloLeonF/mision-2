@@ -1,10 +1,11 @@
 <section>
-    <h2>{{ sectionInformationInput().title }}</h2>
+    <h2>{{ moviesInput().title }}</h2>
     <p>
-        {{ sectionInformationInput().description }}
+        {{ moviesInput().description }}
     </p>
     <div>
-        <app-div-container-ranking [rankingInput]="sectionInformationInput().ranking" />
+        <app-div-container-ranking [rankingInput]="moviesInput().ranking" />
+        <app-div-container-show-file />
     </div>
-    <app-input-search />
+    <app-input-search [listMoviesInput]="sectionInformationInput()" />
 </section>

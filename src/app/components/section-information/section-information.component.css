@@ -30,3 +30,12 @@ section p {
     text-align: left;
     line-height: 1.5;
 }
+
+section div {
+    width: 30%;
+    height: 3rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+}

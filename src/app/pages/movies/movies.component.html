@@ -1,5 +1,5 @@
 <main>
     <div class="container-mask"></div>
-    <video src="/video-fondo.mkv"  loop></video>
-    <app-section-information />
+    <video src={{moviesSelect.urlVideo}} loop></video>
+    <app-section-information [sectionInformationInput]="sectionInformation" [moviesInput]="moviesSelect" />
 </main>

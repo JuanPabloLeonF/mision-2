@@ -1,16 +1,20 @@
 <article>
     <div class="container-list-items">
         <div class="container-search">
-            <input type="text" placeholder="Buscar...">
+            <input (input)="onChangeInput($event)" type="text" placeholder="Buscar...">
         </div>
-        <div class="container-item">
-            <div class="container-img">
-                <img src="the-walking-dead-primera-temporada-original.jpg" alt="caratula de pelicula">
-            </div>
-            <div class="container-information">
-                <p>nombre de la pelicula</p>
-                <p>RAKING: 8.5</p>
-            </div>
-        </div>
+        @defer (when listMoviesShow.length > 0) {
+            @for (movie of listMoviesShow; track movie.title) {
+                <div class="container-item">
+                    <div class="container-img">
+                        <img src={{movie.urlImg}} alt={{movie.title}}>
+                    </div>
+                    <div class="container-information">
+                        <p>{{movie.title}}</p>
+                        <p>RAKING: {{movie.ranking}}</p>
+                    </div>
+                </div>
+            }
+        }
     </div>
 </article>
